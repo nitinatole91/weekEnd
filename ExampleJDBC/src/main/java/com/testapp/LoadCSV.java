@@ -40,6 +40,20 @@ public class LoadCSV {
         } catch (IOException e) {
             System.out.println("Error while writing: " + e.getMessage());
         }	
+// read it back.
+		try (FileReader fr1 = new FileReader("C:\\Users\\Ni3\\Desktop\\write.txt");
+               BufferedReader br1 = new BufferedReader(fr1)) {
+
+               String line1;
+               System.out.println("Reading file content:");
+               while ((line1 = br1.readLine()) != null) {
+                   System.out.println(line1);
+               }
+
+           } catch (IOException e) {
+               System.out.println("Error while reading: " + e.getMessage());
+           }
+        
 //		18.	Append content to an existing file.
 		String filePath = "C:\\Users\\Ni3\\Desktop\\temo.txt"; // your existing file
 		String contentToAppend = "\nThis is the new content to append.";
